@@ -12,6 +12,7 @@ let addPtag = document.getElementById('addPtag');
 let addlist = document.getElementById('addList');
 let saveBtn = document.getElementById('saveBtn');
 let textArea = document.getElementById('txtArea');
+let keyPress = document.getElementById('keypress');
 
 let addElements = document.getElementById('addElements');
 
@@ -50,6 +51,22 @@ saveBtn.addEventListener('click',function(e){
     ///Storage textArea.value into locaStorage
     localStorage.setItem('Text',textArea.value);
 });
+keyPress.addEventListener('keypress',function(e){
+    //console.log(keyPress.innerText);
+    if(e.code=='Enter'){
+        let pElement = document.createElement('p');
+    pElement.innerText = keyPress.value;
+    pElement.setAttribute('class','list-group-item');
+    pElement.setAttribute('id',pCounter);
+    pElement.addEventListener('click',function(e){
+        alert("Hello, I am P Tag!");
+    })
+    addElements.append(pElement);
+    pCounter++;
+    keyPress.value = "";
+
+    }
+});   
 //-------////Tetrive item from local storage///
 ///console.log(localStorage.getItem('Text'));
 let storageItem =(localStorage.getItem('Text'));
@@ -63,4 +80,7 @@ textArea.addEventListener('click',function(e){
 addElements.addEventListener('click',function(e){
 
 });
+
+
+
 //added to git hub/////
