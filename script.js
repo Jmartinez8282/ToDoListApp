@@ -53,7 +53,7 @@ saveBtn.addEventListener('click',function(e){
 });
 keyPress.addEventListener('keypress',function(e){
     //console.log(keyPress.innerText);
-    if(e.code=='Enter'){
+    if(e.code=='Enter'&& keyPress.value!=''){
         let pElement = document.createElement('p');
     pElement.innerText = keyPress.value;
     pElement.setAttribute('class','list-group-item');
