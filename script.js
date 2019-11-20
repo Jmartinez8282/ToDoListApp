@@ -7,7 +7,7 @@ let names = [
 
 
 ]
-
+let todoList = [];
 
 
 
@@ -24,14 +24,7 @@ let addElements = document.getElementById('addElements');
 
 ///Add event listener///
 addPtag.addEventListener('click',function(e){
-    let pElement = document.createElement('p');
-    pElement.innerText = "I have Spoken";
-    pElement.setAttribute('class','list-group-item');
-    pElement.setAttribute('id',pCounter);
-    pElement.addEventListener('click',function(e){
-        alert("Hello, I am P Tag!");
-    })
-    addElements.append(pElement);
+   createPElement("I have Spoken");
 });
 addList.addEventListener('click',function(e){
 //creaet a UL elemnt
@@ -64,6 +57,10 @@ keyPress.addEventListener('keypress',function(e){
     //console.log(keyPress.innerText);
     if(e.code=='Enter'&& keyPress.value!=''){
        createPElement(keyPress.value);
+
+todoList.push(keyPress.value);
+
+localStorage.setItem('ToDo',JSON.stringify(todoList));
     keyPress.value = null;
 
     }
@@ -93,9 +90,19 @@ textArea.addEventListener('click',function(e){
 addElements.addEventListener('click',function(e){
 
 });
+if(localStorage.getItem('ToDo')!=''){
+
+    console.log(JSON.parse(localStorage.getItem('ToDo')));
+    let ToDoLocal= JSON.parse(localStorage.getItem('ToDo'));
+    for(let i = 0; i < ToDoLocal.length;i++){
+        createPElement(ToDoLocal[i]);
+    }
+    todoList= ToDoLocal;
+}
+
 
 if (localStorage.getItem('name')!=''){
-console.log(JSON.parse(localStorage.getItem('names')));
+//console.log(JSON.parse(localStorage.getItem('names')));
 }
 
 //added to git hub/////
