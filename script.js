@@ -55,12 +55,18 @@ saveBtn.addEventListener('click',function(e){
 
 });
 addTask.addEventListener('click',function(e){
-    createPElement(keyPress.value);
-
-    todoList.push(keyPress.value);
     
-    localStorage.setItem('ToDo',JSON.stringify(todoList));
-        keyPress.value = null;
+    if(keyPress.value!=''){
+        createPElement(keyPress.value);
+ 
+ todoList.push(keyPress.value);
+ 
+ localStorage.setItem('ToDo',JSON.stringify(todoList));
+     keyPress.value = null;
+ 
+     }
+       
+        
 });
 keyPress.addEventListener('keypress',function(e){
     //console.log(keyPress.innerText);
