@@ -19,6 +19,7 @@ let addlist = document.getElementById('addList');
 let saveBtn = document.getElementById('saveBtn');
 let textArea = document.getElementById('txtArea');
 let keyPress = document.getElementById('keypress');
+let addTask = document.getElementById('addTask');
 
 let addElements = document.getElementById('addElements');
 
@@ -52,6 +53,14 @@ saveBtn.addEventListener('click',function(e){
     localStorage.setItem('names',JSON.stringify(names));
     console.log(localStorage.getItem('names'));
 
+});
+addTask.addEventListener('click',function(e){
+    createPElement(keyPress.value);
+
+    todoList.push(keyPress.value);
+    
+    localStorage.setItem('ToDo',JSON.stringify(todoList));
+        keyPress.value = null;
 });
 keyPress.addEventListener('keypress',function(e){
     //console.log(keyPress.innerText);
