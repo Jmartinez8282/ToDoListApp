@@ -2,6 +2,12 @@
 let pCounter = 0;
 let sCounter = 0;
 
+let names = [
+    'Trever', 'Jon','Joe #1','Joe#2','Robert'
+
+
+]
+
 
 
 
@@ -50,12 +56,22 @@ saveBtn.addEventListener('click',function(e){
 
     ///Storage textArea.value into locaStorage
     localStorage.setItem('Text',textArea.value);
+    localStorage.setItem('names',JSON.stringify(names));
+    console.log(localStorage.getItem('names'));
+
 });
 keyPress.addEventListener('keypress',function(e){
     //console.log(keyPress.innerText);
     if(e.code=='Enter'&& keyPress.value!=''){
-        let pElement = document.createElement('p');
-    pElement.innerText = keyPress.value;
+       createPElement(keyPress.value);
+    keyPress.value = null;
+
+    }
+});  
+
+function createPElement(content){
+    let pElement = document.createElement('p');
+    pElement.innerText = content;
     pElement.setAttribute('class','list-group-item');
     pElement.setAttribute('id',pCounter);
     pElement.addEventListener('click',function(e){
@@ -63,10 +79,7 @@ keyPress.addEventListener('keypress',function(e){
     })
     addElements.append(pElement);
     pCounter++;
-    keyPress.value = "";
-
-    }
-});   
+}
 //-------////Tetrive item from local storage///
 ///console.log(localStorage.getItem('Text'));
 let storageItem =(localStorage.getItem('Text'));
@@ -81,6 +94,8 @@ addElements.addEventListener('click',function(e){
 
 });
 
-
+if (localStorage.getItem('name')!=''){
+console.log(JSON.parse(localStorage.getItem('names')));
+}
 
 //added to git hub/////
