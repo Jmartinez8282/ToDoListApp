@@ -18,9 +18,10 @@ let saveBtn = document.getElementById('saveBtn');
 let textArea = document.getElementById('txtArea');
 let keyPress = document.getElementById('keypress');
 let addTask = document.getElementById('addTask');
-let btnClr = document.getElementById('btnClr');
+
 
 let addElements = document.getElementById('addElements');
+
 
 ///Add event listener///
 addPtag.addEventListener('click',function(e){
@@ -99,13 +100,19 @@ function createPElement(content){
 let storageItem =(localStorage.getItem('Text'));
 //--------Assign value to textArea.------///
 //textArea.value=storageItem;
-
+//let btnClr = document.getElementsByClassName("btnClr");
 btnClr.addEventListener('click',function(e){
     
-        todoList = [];
-        localStorage.clear();
+    
+   // let i;
+   // for (i = 0; i < btnClr.length; i++) {
+    ////  btnClr[i].onclick = function() {
+      //  let div = this.parentElement;
+      //  div.style.display = "none";
+      //}
+   // }
         
-        
+   //keyPress.value.removeChild(keyPress.value);
     
 });
 
