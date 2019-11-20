@@ -12,85 +12,59 @@
     <link rel="stylesheet" href="style.css">
     <title>MyToDoList</title>
 </head>
+<div class="hero-image">
+    <div class="hero-text">
 
-<body>
-        <div class="hero">
-                <div class="container">
+        <body>
+            <div class="hero">
+                <div class="container justify content">
                     <h1 class="display-2 text-center">TodoList</h1>
                     <p class="lead text-center">"You will accomplish your tasks"</p>
                     <div class="row">
-                        <form id="form" class="col-lg-6 col-8 mx-auto">
+                        <form id="form" class="mx-auto">
                             <div class="input-group">
-                                    <input class="form-control" id="keypress" rows="1"></input>
+                                <input class="form-control" id="keypress" rows="1"></input>
                                 <span>
                                     <button id="addTask" type="button" class="btn btn-primary">Add Task</button>
                                 </span>
-                            </div>			     
+                                <div class="container">
+                                    <div class="row">
+                                        <ul id="list" class="list col mx-auto">
+                                            <div class="">
+                                                <div class="">
+
+                                                    <div id="addElements" class="list-group-item">
+                                                    </div>
+                                                </div>
+
+                                        </ul>
+                                    </div>
+                                    <div class="col">
+                                        <ul class="list-group">
+                                            <li id="addPtag" class="list-group-item"></li>
+                                            <li id="addList" class="list-group-item"></li>
+                                            <li id="saveBtn" class="list-group-item"></li>
+
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
                         </form>
-                    </div>			
-                    <div class="row">				
-                        <ul id="list" class="list col-lg-6 col-8 mx-auto">
-                            <!-- <li>this is a todo item <input type="checkbox" class="checkbox"></li>
-                            <li>this is a todo item <input type="checkbox" class="checkbox"></li> -->
-                        </ul>
                     </div>
+
                     <div class="row">
-                        <button id="btnClr" type="button" class="btn btn-primary mx-auto btnHide">Clear</button>
-                    </div>	
-                    <div class="col4">
-                        <div class="col4">
-                                <div id="addElements" class="col-4">
-                        </div>
+                        <button id="keypress" type="button" class="btn btn-primary mx-auto btnHide">Clear</button>
                     </div>
 
-                    
 
-                        </div>			
+
+
                 </div>
             </div>
-    <!------------------------------------------------->
-    <div class="row-container">
-        <div class="row pt-5 ">
-            <div class="col d-flex justify-content-center">
-                <h2>MyToDoList</h2>
-            </div>
-        </div>
-        <div class="row pt-5">
-            <div class="col-4">
-                <div class="container">
-                    <div class="col">
-                        <ul class="list-group">
-                            <li id="addPtag" class="list-group-item">Add a p tag</li>
-                            <li id="addList" class="list-group-item">Add a list Item</li>
-                            <li id="saveBtn" class="list-group-item">Save Text</li>
-
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-            <div id="addElements" class="col-4">
-
-            </div>
-            <div class="col-4">
-                <div class="container">
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="txtArea">Example</label>
-                            <textarea class="form-control" id="txtArea" rows="3"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="keyPress">Capturing Keypress Events</label>
-                            <input class="form-control" id="keypress" rows="1"></input>
-                            <button id="addTask" type="button" class="btn btn-outline-success btn-lg">Add Task</button>
-                          </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
     </div>
+    <!------------------------------------------------->
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -104,6 +78,10 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script src="script.js"></script>
-</body>
+    </body>
+</div>
+</div>
+
+
 
 </html>

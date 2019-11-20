@@ -2,11 +2,9 @@
 let pCounter = 0;
 let sCounter = 0;
 
-let names = [
-    'Trever', 'Jon','Joe #1','Joe#2','Robert'
 
 
-]
+
 let todoList = [];
 
 
@@ -70,6 +68,7 @@ addTask.addEventListener('click',function(e){
 });
 keyPress.addEventListener('keypress',function(e){
     //console.log(keyPress.innerText);
+    console.log("clear");
     if(e.code=='Enter'&& keyPress.value!=''){
        createPElement(keyPress.value);
 
@@ -80,6 +79,7 @@ localStorage.setItem('ToDo',JSON.stringify(todoList));
 
     }
 });  
+
 
 function createPElement(content){
     let pElement = document.createElement('p');
@@ -96,11 +96,11 @@ function createPElement(content){
 ///console.log(localStorage.getItem('Text'));
 let storageItem =(localStorage.getItem('Text'));
 //--------Assign value to textArea.------///
-textArea.value=storageItem;
+//textArea.value=storageItem;
 
-textArea.addEventListener('click',function(e){
+//textArea.addEventListener('click',function(e){
 
-});
+//});
 
 addElements.addEventListener('click',function(e){
 
