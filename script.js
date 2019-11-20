@@ -18,6 +18,7 @@ let saveBtn = document.getElementById('saveBtn');
 let textArea = document.getElementById('txtArea');
 let keyPress = document.getElementById('keypress');
 let addTask = document.getElementById('addTask');
+let btnClr = document.getElementById('btnClr');
 
 let addElements = document.getElementById('addElements');
 
@@ -87,7 +88,8 @@ function createPElement(content){
     pElement.setAttribute('class','list-group-item');
     pElement.setAttribute('id',pCounter);
     pElement.addEventListener('click',function(e){
-        alert("Hello, I am P Tag!");
+        document.getElementById("addElements").contentEditable = "true";
+       // alert("Hello, I am P Tag!");
     })
     addElements.append(pElement);
     pCounter++;
@@ -98,9 +100,14 @@ let storageItem =(localStorage.getItem('Text'));
 //--------Assign value to textArea.------///
 //textArea.value=storageItem;
 
-//textArea.addEventListener('click',function(e){
-
-//});
+btnClr.addEventListener('click',function(e){
+    
+        todoList = [];
+        localStorage.clear();
+        
+        
+    
+});
 
 addElements.addEventListener('click',function(e){
 
