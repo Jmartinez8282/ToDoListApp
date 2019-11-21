@@ -63,26 +63,21 @@ function createPElement(content) {
     addElements.append(pElement);
     pCounter++;
 }
-
 //-------//// item from local storage///
 ///console.log(localStorage.getItem('Text'));
 let storageItem = (localStorage.getItem('Text'));
 //--------Assign value to textArea.------///
 //textArea.value=storageItem;
 btnClr.addEventListener('click', function (e) {
-    
-    if (localStorage.getItem('ToDo') != '') {
+     if (localStorage.getItem('ToDo') != '') {
         console.log(JSON.parse(localStorage.getItem('ToDo')));
         let ToDoLocal = JSON.parse(localStorage.getItem('ToDo'));
         for (let i = 0; i > ToDoLocal.length; i--) {
             createPElement(ToDoLocal[i]);
-        }
-       
+         }
         todoList = ToDoLocal;
         addElements.firstChild.remove();
-       
-        
-    }
+       }
 });
 addElements.addEventListener('click', function (e) {
 });
@@ -97,5 +92,4 @@ if (localStorage.getItem('ToDo') != '') {
 if (localStorage.getItem('name') != '') {
     //console.log(JSON.parse(localStorage.getItem('names')));
 }
-
 //added to git hub/////
