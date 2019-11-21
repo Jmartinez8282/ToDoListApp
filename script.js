@@ -12,26 +12,23 @@ let addTask = document.getElementById('addTask');
 let addElements = document.getElementById('addElements');
 ///Add event listener///
 addPtag.addEventListener('click', function (e) {
-    createPElement("I have Spoken");
+    createPElement("stop clicking me (CLICK ON ME TO EDIT)");
 });
 addList.addEventListener('click', function (e) {
     //creaet a UL elemnt
     let ulElement = document.createElement('ul');
     //adding  a list element
     let listElement = document.createElement('li');
-    listElement.innerText = "I am a list Item";
+    listElement.innerText = "I SAID STOP IT DUDE!(CLICK ON ME TO EDIT AND DELETE)";
     listElement.setAttribute('class', 'list-group-item');
     //appending items in the proper order
     //appending list element ot ul element
     ulElement.appendChild(listElement);
-
-    //appending ul elemetn to add elemets
+     //appending ul elemetn to add elemets
     addElements.append(ulElement);
 });
-saveBtn.addEventListener('click', function (e) {
-
+    saveBtn.addEventListener('click', function (e) {
     alert(textArea.value);
-
     ///Storage textArea.value into locaStorage
     localStorage.setItem('Text', textArea.value);
     localStorage.setItem('names', JSON.stringify(names));
@@ -40,28 +37,20 @@ saveBtn.addEventListener('click', function (e) {
 addTask.addEventListener('click', function (e) {
         if (keyPress.value != '') {
         createPElement(keyPress.value);
-
         todoList.push(keyPress.value);
-
-        localStorage.setItem('ToDo', JSON.stringify(todoList));
+         localStorage.setItem('ToDo', JSON.stringify(todoList));
         keyPress.value = null;
-
-    }
-
-
+        }
 });
 keyPress.addEventListener('keypress', function (e) {
     //console.log(keyPress.innerText);
     console.log("clear");
     if (e.code == 'Enter' && keyPress.value != '') {
         createPElement(keyPress.value);
-
         todoList.push(keyPress.value);
-
         localStorage.setItem('ToDo', JSON.stringify(todoList));
         keyPress.value = null;
-
-    }
+        }
 });
 function createPElement(content) {
     let pElement = document.createElement('p');
@@ -70,32 +59,34 @@ function createPElement(content) {
     pElement.setAttribute('id', pCounter);
     pElement.addEventListener('click', function (e) {
         document.getElementById("addElements").contentEditable = "true";
-      
-       
-    })
+       })
     addElements.append(pElement);
     pCounter++;
 }
 
-//-------////Tetrive item from local storage///
+//-------//// item from local storage///
 ///console.log(localStorage.getItem('Text'));
 let storageItem = (localStorage.getItem('Text'));
 //--------Assign value to textArea.------///
 //textArea.value=storageItem;
-
-
 btnClr.addEventListener('click', function (e) {
     
-    addElements.firstChild.remove();
-
-   
+    if (localStorage.getItem('ToDo') != '') {
+        console.log(JSON.parse(localStorage.getItem('ToDo')));
+        let ToDoLocal = JSON.parse(localStorage.getItem('ToDo'));
+        for (let i = 0; i > ToDoLocal.length; i--) {
+            createPElement(ToDoLocal[i]);
+        }
+       
+        todoList = ToDoLocal;
+        addElements.firstChild.remove();
+       
+        
+    }
 });
-
 addElements.addEventListener('click', function (e) {
-
 });
 if (localStorage.getItem('ToDo') != '') {
-
     console.log(JSON.parse(localStorage.getItem('ToDo')));
     let ToDoLocal = JSON.parse(localStorage.getItem('ToDo'));
     for (let i = 0; i < ToDoLocal.length; i++) {
@@ -103,8 +94,6 @@ if (localStorage.getItem('ToDo') != '') {
     }
     todoList = ToDoLocal;
 }
-
-
 if (localStorage.getItem('name') != '') {
     //console.log(JSON.parse(localStorage.getItem('names')));
 }
