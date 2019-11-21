@@ -70,28 +70,25 @@ function createPElement(content) {
     pElement.setAttribute('id', pCounter);
     pElement.addEventListener('click', function (e) {
         document.getElementById("addElements").contentEditable = "true";
-        // alert("Hello, I am P Tag!");
+      
+       
     })
     addElements.append(pElement);
     pCounter++;
 }
+
 //-------////Tetrive item from local storage///
 ///console.log(localStorage.getItem('Text'));
 let storageItem = (localStorage.getItem('Text'));
 //--------Assign value to textArea.------///
 //textArea.value=storageItem;
-//let btnClr = document.getElementsByClassName("btnClr");
+
+
 btnClr.addEventListener('click', function (e) {
-    // let i;
-    // for (i = 0; i < btnClr.length; i++) {
-    ////  btnClr[i].onclick = function() {
-    //  let div = this.parentElement;
-    //  div.style.display = "none";
-    //}
-    // }
+    
+    addElements.firstChild.remove();
 
-    //keyPress.value.removeChild(keyPress.value);
-
+   
 });
 
 addElements.addEventListener('click', function (e) {
